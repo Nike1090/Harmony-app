@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		474ACCD92B28490600EB95B1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474ACCD82B28490500EB95B1 /* Helper.swift */; };
+		474ACCDB2B2859CC00EB95B1 /* HarmonyDataModel.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */; };
 		4781EA942B170CA9005BA0A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781EA932B170CA9005BA0A4 /* AppDelegate.swift */; };
 		4781EA962B170CA9005BA0A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781EA952B170CA9005BA0A4 /* SceneDelegate.swift */; };
 		4781EA982B170CA9005BA0A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781EA972B170CA9005BA0A4 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		474ACCD82B28490500EB95B1 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = HarmonyDataModel.sqlite; sourceTree = "<group>"; };
 		4781EA902B170CA9005BA0A4 /* Harmony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harmony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4781EA932B170CA9005BA0A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4781EA952B170CA9005BA0A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,8 +105,10 @@
 		47F34E952B1AB36800D7B2E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */,
 				47F34E962B1ACD2400D7B2E6 /* NetworkingManager.swift */,
 				47F34E982B1ACD4500D7B2E6 /* DataStorageManager.swift */,
+				474ACCD82B28490500EB95B1 /* Helper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 				4781EAA02B170CAA005BA0A4 /* LaunchScreen.storyboard in Resources */,
 				4781EA9D2B170CAA005BA0A4 /* Assets.xcassets in Resources */,
 				4781EA9B2B170CA9005BA0A4 /* Main.storyboard in Resources */,
+				474ACCDB2B2859CC00EB95B1 /* HarmonyDataModel.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +212,7 @@
 				47F34E972B1ACD2400D7B2E6 /* NetworkingManager.swift in Sources */,
 				4781EA962B170CA9005BA0A4 /* SceneDelegate.swift in Sources */,
 				47F34ECA2B27DC3800D7B2E6 /* Quote.swift in Sources */,
+				474ACCD92B28490600EB95B1 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
