@@ -24,6 +24,8 @@
 		47F34EC22B1C259000D7B2E6 /* landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47F34EC12B1C258F00D7B2E6 /* landscape.jpg */; };
 		47F34EC42B1C35E500D7B2E6 /* 9034906.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47F34EC32B1C35E500D7B2E6 /* 9034906.jpg */; };
 		47F34EC62B1C37CA00D7B2E6 /* happy faces.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 47F34EC52B1C37CA00D7B2E6 /* happy faces.jpeg */; };
+		47F34EC82B27D89200D7B2E6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34EC72B27D89200D7B2E6 /* HomeViewController.swift */; };
+		47F34ECA2B27DC3800D7B2E6 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34EC92B27DC3800D7B2E6 /* Quote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		47F34EC12B1C258F00D7B2E6 /* landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = landscape.jpg; path = "../../../../forest-near-lake-background/landscape.jpg"; sourceTree = "<group>"; };
 		47F34EC32B1C35E500D7B2E6 /* 9034906.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 9034906.jpg; path = "../../../../rainbow-cloud-isolated/9034906.jpg"; sourceTree = "<group>"; };
 		47F34EC52B1C37CA00D7B2E6 /* happy faces.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "happy faces.jpeg"; path = "../../../../happy faces.jpeg"; sourceTree = "<group>"; };
+		47F34EC72B27D89200D7B2E6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		47F34EC92B27DC3800D7B2E6 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 			children = (
 				47F34E932B1AB14500D7B2E6 /* User.swift */,
 				47F34E9B2B1ACE3300D7B2E6 /* Mood.swift */,
+				47F34EC92B27DC3800D7B2E6 /* Quote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			children = (
 				47F34EB92B1B0ED800D7B2E6 /* SignUpViewController.swift */,
 				47F34EBB2B1B0EF600D7B2E6 /* LoginViewController.swift */,
+				47F34EC72B27D89200D7B2E6 /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,10 +223,12 @@
 				47F34E992B1ACD4500D7B2E6 /* DataStorageManager.swift in Sources */,
 				47F34EBA2B1B0ED800D7B2E6 /* SignUpViewController.swift in Sources */,
 				4781EA982B170CA9005BA0A4 /* ViewController.swift in Sources */,
+				47F34EC82B27D89200D7B2E6 /* HomeViewController.swift in Sources */,
 				47F34E9C2B1ACE3400D7B2E6 /* Mood.swift in Sources */,
 				4781EA942B170CA9005BA0A4 /* AppDelegate.swift in Sources */,
 				47F34E972B1ACD2400D7B2E6 /* NetworkingManager.swift in Sources */,
 				4781EA962B170CA9005BA0A4 /* SceneDelegate.swift in Sources */,
+				47F34ECA2B27DC3800D7B2E6 /* Quote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
