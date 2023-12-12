@@ -18,12 +18,8 @@
 		47F34E972B1ACD2400D7B2E6 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34E962B1ACD2400D7B2E6 /* NetworkingManager.swift */; };
 		47F34E992B1ACD4500D7B2E6 /* DataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34E982B1ACD4500D7B2E6 /* DataStorageManager.swift */; };
 		47F34E9C2B1ACE3400D7B2E6 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34E9B2B1ACE3300D7B2E6 /* Mood.swift */; };
-		47F34EB82B1B074400D7B2E6 /* harmony-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F34EB72B1B074400D7B2E6 /* harmony-logo.png */; };
 		47F34EBA2B1B0ED800D7B2E6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34EB92B1B0ED800D7B2E6 /* SignUpViewController.swift */; };
 		47F34EBC2B1B0EF600D7B2E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34EBB2B1B0EF600D7B2E6 /* LoginViewController.swift */; };
-		47F34EC22B1C259000D7B2E6 /* landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47F34EC12B1C258F00D7B2E6 /* landscape.jpg */; };
-		47F34EC42B1C35E500D7B2E6 /* 9034906.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47F34EC32B1C35E500D7B2E6 /* 9034906.jpg */; };
-		47F34EC62B1C37CA00D7B2E6 /* happy faces.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 47F34EC52B1C37CA00D7B2E6 /* happy faces.jpeg */; };
 		47F34EC82B27D89200D7B2E6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34EC72B27D89200D7B2E6 /* HomeViewController.swift */; };
 		47F34ECA2B27DC3800D7B2E6 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34EC92B27DC3800D7B2E6 /* Quote.swift */; };
 /* End PBXBuildFile section */
@@ -41,12 +37,8 @@
 		47F34E962B1ACD2400D7B2E6 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		47F34E982B1ACD4500D7B2E6 /* DataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageManager.swift; sourceTree = "<group>"; };
 		47F34E9B2B1ACE3300D7B2E6 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
-		47F34EB72B1B074400D7B2E6 /* harmony-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "harmony-logo.png"; path = "../../../../harmony-logo.png"; sourceTree = "<group>"; };
 		47F34EB92B1B0ED800D7B2E6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		47F34EBB2B1B0EF600D7B2E6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		47F34EC12B1C258F00D7B2E6 /* landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = landscape.jpg; path = "../../../../forest-near-lake-background/landscape.jpg"; sourceTree = "<group>"; };
-		47F34EC32B1C35E500D7B2E6 /* 9034906.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 9034906.jpg; path = "../../../../rainbow-cloud-isolated/9034906.jpg"; sourceTree = "<group>"; };
-		47F34EC52B1C37CA00D7B2E6 /* happy faces.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "happy faces.jpeg"; path = "../../../../happy faces.jpeg"; sourceTree = "<group>"; };
 		47F34EC72B27D89200D7B2E6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		47F34EC92B27DC3800D7B2E6 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +74,6 @@
 		4781EA922B170CA9005BA0A4 /* Harmony */ = {
 			isa = PBXGroup;
 			children = (
-				47F34E9D2B1AEDE800D7B2E6 /* Images */,
 				47F34E9A2B1ACDF500D7B2E6 /* Controllers */,
 				47F34E952B1AB36800D7B2E6 /* Utilities */,
 				47F34E922B1AB09C00D7B2E6 /* Models */,
@@ -124,17 +115,6 @@
 				47F34EC72B27D89200D7B2E6 /* HomeViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		47F34E9D2B1AEDE800D7B2E6 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				47F34EC52B1C37CA00D7B2E6 /* happy faces.jpeg */,
-				47F34EC32B1C35E500D7B2E6 /* 9034906.jpg */,
-				47F34EC12B1C258F00D7B2E6 /* landscape.jpg */,
-				47F34EB72B1B074400D7B2E6 /* harmony-logo.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,11 +183,7 @@
 			files = (
 				4781EAA02B170CAA005BA0A4 /* LaunchScreen.storyboard in Resources */,
 				4781EA9D2B170CAA005BA0A4 /* Assets.xcassets in Resources */,
-				47F34EC62B1C37CA00D7B2E6 /* happy faces.jpeg in Resources */,
 				4781EA9B2B170CA9005BA0A4 /* Main.storyboard in Resources */,
-				47F34EB82B1B074400D7B2E6 /* harmony-logo.png in Resources */,
-				47F34EC22B1C259000D7B2E6 /* landscape.jpg in Resources */,
-				47F34EC42B1C35E500D7B2E6 /* 9034906.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

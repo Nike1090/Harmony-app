@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="harmony-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="RVf-SX-IZE">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="harmony-logo" translatesAutoresizingMaskIntoConstraints="NO" id="RVf-SX-IZE">
                                 <rect key="frame" x="52" y="263" width="288" height="306"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -255,7 +255,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="landscape.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-bm-tZi">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="landscape" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-bm-tZi">
                                 <rect key="frame" x="0.0" y="487" width="394" height="282"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -304,7 +304,7 @@
                                         <color key="textColor" red="0.39215683940000001" green="0.46274507050000002" blue="0.49411764740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happy faces.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="IJ2-BR-7pQ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happy faces" translatesAutoresizingMaskIntoConstraints="NO" id="IJ2-BR-7pQ">
                                         <rect key="frame" x="237" y="0.0" width="106" height="94"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -430,10 +430,10 @@
         <image name="arrowshape.forward" catalog="system" width="128" height="104"/>
         <image name="chart.pie.fill" catalog="system" width="128" height="123"/>
         <image name="command.circle" catalog="system" width="128" height="123"/>
-        <image name="happy faces.jpeg" width="400" height="300"/>
-        <image name="harmony-logo.png" width="2000" height="1789"/>
+        <image name="happy faces" width="400" height="300"/>
+        <image name="harmony-logo" width="2000" height="1789"/>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <image name="landscape.jpg" width="1102" height="768"/>
+        <image name="landscape" width="1102" height="768"/>
         <image name="lightbulb.fill" catalog="system" width="92" height="128"/>
         <image name="note" catalog="system" width="128" height="107"/>
         <image name="person" catalog="system" width="128" height="121"/>
