@@ -12,4 +12,13 @@ struct User {
     var name: String
     var email: String
     var password: String
+    
+    // Initialize User with moods array
+    init(userId: Int, name: String, email: String, password: String) {
+        self.userId = userId
+        self.name = name
+        self.email = email
+        self.password = password
+        
+    }
 }

@@ -15,6 +15,8 @@ struct Mood {
         case bad = "Bad"
         case terrible = "Terrible"
     }
+    var moodId: Int
+    var userId: Int
     var feelingText: String
     var moodType: MoodType
     var date: Date
@@ -22,20 +24,13 @@ struct Mood {
     // Additional properties related to mood tracking
     
     // Example initializer for Mood
-    init(moodType: MoodType,feelingText: String, date: Date) {
-        self.feelingText = feelingText
-        self.moodType = moodType
-        self.date = date
-    }
+    init(moodId: Int, userId: Int, feelingText: String, moodType: MoodType, date: Date) {
+           self.moodId = moodId
+           self.userId = userId
+           self.feelingText = feelingText
+           self.moodType = moodType
+           self.date = date
+       }
     
-    // Example function to convert Mood to a dictionary for storage or transmission
-    func toDictionary() -> [String: Any] {
-        return [
-            "feelingText": String.self,
-            "moodType": moodType.rawValue,
-            "date": date
-        ]
-    }
     
-   
 }

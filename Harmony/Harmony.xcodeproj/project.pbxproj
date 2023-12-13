@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		474ACCD92B28490600EB95B1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474ACCD82B28490500EB95B1 /* Helper.swift */; };
 		474ACCDB2B2859CC00EB95B1 /* HarmonyDataModel.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */; };
+		474ACCDD2B296F7400EB95B1 /* MoodTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474ACCDC2B296F7400EB95B1 /* MoodTrackerViewController.swift */; };
 		4781EA942B170CA9005BA0A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781EA932B170CA9005BA0A4 /* AppDelegate.swift */; };
 		4781EA962B170CA9005BA0A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781EA952B170CA9005BA0A4 /* SceneDelegate.swift */; };
-		4781EA982B170CA9005BA0A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781EA972B170CA9005BA0A4 /* ViewController.swift */; };
 		4781EA9B2B170CA9005BA0A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4781EA992B170CA9005BA0A4 /* Main.storyboard */; };
 		4781EA9D2B170CAA005BA0A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4781EA9C2B170CAA005BA0A4 /* Assets.xcassets */; };
 		4781EAA02B170CAA005BA0A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4781EA9E2B170CAA005BA0A4 /* LaunchScreen.storyboard */; };
@@ -29,10 +29,10 @@
 /* Begin PBXFileReference section */
 		474ACCD82B28490500EB95B1 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = HarmonyDataModel.sqlite; sourceTree = "<group>"; };
+		474ACCDC2B296F7400EB95B1 /* MoodTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerViewController.swift; sourceTree = "<group>"; };
 		4781EA902B170CA9005BA0A4 /* Harmony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harmony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4781EA932B170CA9005BA0A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4781EA952B170CA9005BA0A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4781EA972B170CA9005BA0A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4781EA9A2B170CA9005BA0A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4781EA9C2B170CAA005BA0A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4781EA9F2B170CAA005BA0A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,7 +83,6 @@
 				47F34E922B1AB09C00D7B2E6 /* Models */,
 				4781EA932B170CA9005BA0A4 /* AppDelegate.swift */,
 				4781EA952B170CA9005BA0A4 /* SceneDelegate.swift */,
-				4781EA972B170CA9005BA0A4 /* ViewController.swift */,
 				4781EA992B170CA9005BA0A4 /* Main.storyboard */,
 				4781EA9C2B170CAA005BA0A4 /* Assets.xcassets */,
 				4781EA9E2B170CAA005BA0A4 /* LaunchScreen.storyboard */,
@@ -119,6 +118,7 @@
 				47F34EB92B1B0ED800D7B2E6 /* SignUpViewController.swift */,
 				47F34EBB2B1B0EF600D7B2E6 /* LoginViewController.swift */,
 				47F34EC72B27D89200D7B2E6 /* HomeViewController.swift */,
+				474ACCDC2B296F7400EB95B1 /* MoodTrackerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 				47F34E942B1AB14500D7B2E6 /* User.swift in Sources */,
 				47F34E992B1ACD4500D7B2E6 /* DataStorageManager.swift in Sources */,
 				47F34EBA2B1B0ED800D7B2E6 /* SignUpViewController.swift in Sources */,
-				4781EA982B170CA9005BA0A4 /* ViewController.swift in Sources */,
+				474ACCDD2B296F7400EB95B1 /* MoodTrackerViewController.swift in Sources */,
 				47F34EC82B27D89200D7B2E6 /* HomeViewController.swift in Sources */,
 				47F34E9C2B1ACE3400D7B2E6 /* Mood.swift in Sources */,
 				4781EA942B170CA9005BA0A4 /* AppDelegate.swift in Sources */,
