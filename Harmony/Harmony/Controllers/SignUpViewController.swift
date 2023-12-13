@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
             
 
             // Check for valid email format using regular expression
-            if !isValidEmail(email: userEmail) {
+            if !Helper.isValidEmail(email: userEmail) {
                 Helper.showAlert(from: self, with: "Incorrect email format.")
                 return
             }
@@ -64,11 +64,7 @@ class SignUpViewController: UIViewController {
         
     }
     
-    // Function to validate email format using regular expression
-       private func isValidEmail(email: String) -> Bool {
-           let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-           return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
-       }
+    
 
     
     

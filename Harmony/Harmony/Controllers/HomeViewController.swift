@@ -11,12 +11,16 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-
+    var currentUser: User?
+    @IBOutlet weak var GreetLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchQuotes()
+        
+        self.GreetLabel.text = "Hello, \(String(describing: currentUser!.name))"
+       
         // Do any additional setup after loading the view.
     }
     
@@ -41,16 +45,14 @@ class HomeViewController: UIViewController {
             }
         }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+            if segue.identifier == "MoodTrackerViewController" {
+                if let moodTrackerVC = segue.destination as? MoodTrackerViewController {
+                    moodTrackerVC.currentUser = currentUser
+                }
+            }
+        }
+    
+   
 
 }

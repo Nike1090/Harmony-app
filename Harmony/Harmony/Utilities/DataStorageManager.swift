@@ -12,6 +12,8 @@ class DataStorageManager {
     static let shared = DataStorageManager()
     var db: Connection?
     
+
+    
     private init() {
         do {
             // Get the path of the SQLite database file in the app's bundle
@@ -22,7 +24,7 @@ class DataStorageManager {
                 // Create tables
                 try createTables()
                 // Insert data
-                // insertInitialData()
+                insertInitialData()
                 
             } else {
                 print("HarmonyDataModel.sqlite file not found in the app's bundle.")
@@ -48,6 +50,23 @@ class DataStorageManager {
                 table.column(email)
                 table.column(password)
             })
+            
+            // Create Mood table
+            let mood = Table("mood")
+            let moodId = Expression<Int>("mood_Id")
+            let userIdRef = Expression<Int>("user_Id")
+            let feelingText = Expression<String>("feeling_text")
+            let moodType = Expression<String>("mood_type")
+            let date = Expression<Date>("date")
+                    
+            try db?.run(mood.create(ifNotExists: true) { table in
+                table.column(moodId, primaryKey: true)
+                table.column(userIdRef)
+                table.column(feelingText)
+                table.column(moodType)
+                table.column(date)
+                table.foreignKey(userIdRef, references: user, userId)
+                    })
             
             
         } catch {
@@ -97,7 +116,40 @@ class DataStorageManager {
         try db?.run(insertUser)
     }
     
-    // Add this function to the DataStorageManager class
+    
+    
+    
+    func saveMoodForCurrentUser(mood: Mood) {
+
+        do {
+            let moodTable = Table("mood")
+            let moodIdExp = Expression<Int>("mood_Id")
+            let userIdExp = Expression<Int>("user_Id")
+            let feelingTextExp = Expression<String>("feeling_text")
+            let moodTypeExp = Expression<String>("mood_type")
+            let dateExp = Expression<Date>("date")
+
+            let insertMood = moodTable.insert(
+                moodIdExp <- mood.moodId,
+                userIdExp <- mood.userId,
+                feelingTextExp <- mood.feelingText,
+                moodTypeExp <- mood.moodType.rawValue,
+                dateExp <- mood.date
+            )
+
+            try db?.run(insertMood)
+        } catch {
+            // Handle the error here
+            print("Error inserting mood data: \(error)")
+        }
+    }
+    
+    
+
+    
+    func updateUserMoods(for user: User) {}
+    
+    
     func retrieveUsers() -> [User] {
         do {
             let user = Table("user")
@@ -133,6 +185,52 @@ class DataStorageManager {
             return []
         }
     }
+ 
+    func retrieveMoods(for userId: Int) -> [Mood] {
+        do {
+            let mood = Table("mood")
+            let moodId = Expression<Int>("mood_Id")
+            let userIdRef = Expression<Int>("user_Id")
+            let feelingText = Expression<String>("feelingText")
+            let moodType = Expression<String?>("moodType")
+            let date = Expression<Date>("date")
+
+            let query = mood.select(moodId, userIdRef, feelingText, moodType, date)
+                            .filter(userIdRef == userId)
+
+            guard let moodRows = try db?.prepare(query) else {
+                // Handle the case when moodRows is nil
+                print("No mood rows found.")
+                return []
+            }
+
+            var result: [Mood] = []
+
+            for row in moodRows {
+                if let moodTypeString = row[moodType],
+                   let moodTypeEnum = Mood.MoodType(rawValue: moodTypeString) {
+                    let mood = Mood(
+                        moodId: row[moodId],
+                        userId: row[userIdRef],
+                        feelingText: row[feelingText],
+                        moodType: moodTypeEnum,
+                        date: row[date]
+                    )
+                    result.append(mood)
+                }
+            }
+
+            return result
+        } catch {
+            // Handle the error here
+            print("Error retrieving moods: \(error)")
+            return []
+        }
+    }
+
+    
+    
+    
     
 }
     
