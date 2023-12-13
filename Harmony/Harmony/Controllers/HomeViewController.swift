@@ -51,7 +51,12 @@ class HomeViewController: UIViewController {
                     moodTrackerVC.currentUser = currentUser
                 }
             }
+    
+    
+        
+        
         }
+    
     
    
 
