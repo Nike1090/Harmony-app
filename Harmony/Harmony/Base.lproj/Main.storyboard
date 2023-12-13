@@ -58,14 +58,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oeI-FR-is5">
                                 <rect key="frame" x="60" y="379" width="273" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3bv-Vp-cHc">
                                 <rect key="frame" x="60" y="333" width="273" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
@@ -109,6 +107,9 @@
                                     </attributedString>
                                     <color key="baseForegroundColor" red="0.31372550129999999" green="0.37254902719999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="signUpButton:" destination="aY5-b5-DC9" eventType="touchUpInside" id="YDe-Aa-Chc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajC-lq-bqS">
                                 <rect key="frame" x="90" y="522" width="213" height="20"/>
@@ -142,6 +143,11 @@
                         <color key="tintColor" systemColor="systemBlueColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="2nl-CB-NCg"/>
+                    <connections>
+                        <outlet property="email" destination="oeI-FR-is5" id="hzf-y1-yPW"/>
+                        <outlet property="name" destination="3bv-Vp-cHc" id="Rcy-0j-BdK"/>
+                        <outlet property="password" destination="Ac1-5g-MLt" id="c3A-cb-mSP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVK-Zs-cd3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,7 +164,6 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hKM-P6-3Ov">
                                 <rect key="frame" x="60" y="383" width="273" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
@@ -202,6 +207,7 @@
                                     <color key="baseForegroundColor" red="0.31372550129999999" green="0.37254902719999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="loginButon:" destination="mgR-lO-RHT" eventType="touchUpInside" id="dLG-jF-hlE"/>
                                     <segue destination="kBA-hk-2vb" kind="show" id="XnO-Bz-87v"/>
                                 </connections>
                             </button>
@@ -210,12 +216,16 @@
                         <color key="backgroundColor" red="0.39215683940000001" green="0.46274507050000002" blue="0.49411764740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="nmJ-ZU-zTe"/>
+                    <connections>
+                        <outlet property="email" destination="hKM-P6-3Ov" id="epn-Am-9he"/>
+                        <outlet property="password" destination="5kZ-U9-n5f" id="R0g-Y8-zr9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgM-ho-l5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3167" y="-37"/>
         </scene>
-        <!--Community-->
+        <!--View Controller-->
         <scene sceneID="5gU-I0-bre">
             <objects>
                 <viewController id="3Kf-Cb-iKU" sceneMemberID="viewController">
@@ -225,13 +235,13 @@
                         <viewLayoutGuide key="safeArea" id="YOy-fY-5Is"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Community" image="command.circle" catalog="system" id="s0S-Oz-jua"/>
+                    <navigationItem key="navigationItem" id="2V3-zR-ApS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngb-n1-0V6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4876" y="701"/>
+            <point key="canvasLocation" x="6737" y="768"/>
         </scene>
-        <!--Support-->
+        <!--View Controller-->
         <scene sceneID="pvS-kp-dVR">
             <objects>
                 <viewController id="EF4-Mw-Z9q" sceneMemberID="viewController">
@@ -241,13 +251,13 @@
                         <viewLayoutGuide key="safeArea" id="btD-XP-Mrn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Support" image="person" catalog="system" id="fy3-iV-pwu"/>
+                    <navigationItem key="navigationItem" id="vZI-Oo-VsE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uq-zo-kKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4876" y="-715"/>
+            <point key="canvasLocation" x="5802.2900763358775" y="-715.49295774647896"/>
         </scene>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="03C-aZ-2jI">
             <objects>
                 <viewController id="Hax-OA-aas" customClass="HomeViewController" customModule="Harmony" customModuleProvider="target" sceneMemberID="viewController">
@@ -305,9 +315,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happy faces" translatesAutoresizingMaskIntoConstraints="NO" id="IJ2-BR-7pQ">
-                                        <rect key="frame" x="237" y="0.0" width="106" height="94"/>
+                                        <rect key="frame" x="182" y="0.0" width="106" height="94"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYD-zp-rzA">
+                                        <rect key="frame" x="296" y="30" width="50" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <segue destination="wbW-1r-J5i" kind="show" identifier="MoodTrackerViewController" id="WT6-3M-bwv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95294117647058818" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -334,8 +352,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello, User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8z-zY-zcE">
-                                <rect key="frame" x="30" y="501" width="84" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8z-zY-zcE">
+                                <rect key="frame" x="30" y="499" width="200" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -358,18 +376,151 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iCY-9X-Lv0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="HomeViewController"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="note" catalog="system" id="e1I-QL-roL"/>
+                    <navigationItem key="navigationItem" id="YlF-hB-qXq">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="journal" style="plain" id="YHj-Zk-OIf"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="GreetLabel" destination="B8z-zY-zcE" id="KOd-nk-3bV"/>
                         <outlet property="authorLabel" destination="3jG-4X-vZ6" id="rjt-eR-XHs"/>
                         <outlet property="quoteLabel" destination="YD1-wU-xLG" id="rSz-ze-d8i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqI-E2-bYO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4875.5725190839694" y="-37.323943661971832"/>
+            <point key="canvasLocation" x="5802.2900763358775" y="-37.323943661971832"/>
         </scene>
-        <!--Harmony-->
+        <!--Mood Tracker View Controller-->
+        <scene sceneID="zfm-8h-Mt0">
+            <objects>
+                <viewController id="wbW-1r-J5i" customClass="MoodTrackerViewController" customModule="Harmony" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bxd-Ge-nMO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="excellent" translatesAutoresizingMaskIntoConstraints="NO" id="XRZ-ri-4RE">
+                                <rect key="frame" x="39" y="122" width="314" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZF-JW-lt8">
+                                <rect key="frame" x="39" y="329" width="314" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How are you today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hx-YA-mcB">
+                                        <rect key="frame" x="8" y="8" width="163" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="terrible" translatesAutoresizingMaskIntoConstraints="NO" id="dM0-SB-2DJ">
+                                        <rect key="frame" x="10" y="36" width="52" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bad" translatesAutoresizingMaskIntoConstraints="NO" id="Iqh-D7-GNV">
+                                        <rect key="frame" x="70" y="36" width="52" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="okay" translatesAutoresizingMaskIntoConstraints="NO" id="9tD-Ku-CNG">
+                                        <rect key="frame" x="130" y="36" width="52" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="good" translatesAutoresizingMaskIntoConstraints="NO" id="dlk-sJ-Pwc">
+                                        <rect key="frame" x="190" y="36" width="52" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="excellent" translatesAutoresizingMaskIntoConstraints="NO" id="Tay-xq-VAF">
+                                        <rect key="frame" x="251" y="36" width="52" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terrible" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xj9-EP-Mb2">
+                                        <rect key="frame" x="13" y="100" width="46" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNj-i0-ftN">
+                                        <rect key="frame" x="83" y="100" width="24" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Okay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JY1-ym-Fzx">
+                                        <rect key="frame" x="140" y="100" width="30" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Good" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkH-23-dPQ">
+                                        <rect key="frame" x="199" y="100" width="32" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Excellent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAl-7F-9R9">
+                                        <rect key="frame" x="249" y="100" width="54" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97254902119999997" green="0.88627451660000001" blue="0.85490196939999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What you feel?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5b-ch-5jl">
+                                <rect key="frame" x="140" y="277" width="120" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Say something you feel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfa-OF-M5n">
+                                <rect key="frame" x="39" y="473" width="190" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Write what you feel............" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egK-dj-Y2f">
+                                <rect key="frame" x="39" y="512" width="314" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9D-IS-9Sv">
+                                <rect key="frame" x="39" y="694" width="314" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveFeelingButton:" destination="wbW-1r-J5i" eventType="touchUpInside" id="a6J-ph-p9o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Jg-t2-BXg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kyh-9j-3nj"/>
+                    <connections>
+                        <outlet property="FeelingTextField" destination="egK-dj-Y2f" id="p7K-dw-ltP"/>
+                        <outlet property="SelectedFeelingImageView" destination="XRZ-ri-4RE" id="VyL-uL-lUc"/>
+                        <outlet property="badImage" destination="Iqh-D7-GNV" id="sDs-sM-qOM"/>
+                        <outlet property="excellentImage" destination="Tay-xq-VAF" id="RG0-xr-Tos"/>
+                        <outlet property="goodImage" destination="dlk-sJ-Pwc" id="mYY-np-cgN"/>
+                        <outlet property="okayImage" destination="9tD-Ku-CNG" id="eAi-jd-mtP"/>
+                        <outlet property="terribleImage" destination="dM0-SB-2DJ" id="AJi-Tx-E60"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f48-W7-9IA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6614.5038167938928" y="-37.323943661971832"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="9zX-P5-edk">
             <objects>
                 <viewController id="aY8-s4-LKU" sceneMemberID="viewController">
@@ -379,17 +530,16 @@
                         <viewLayoutGuide key="safeArea" id="Mvh-IR-aFK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Harmony" image="heart" catalog="system" id="b6V-55-MBb"/>
                     <navigationItem key="navigationItem" id="X7x-DH-Hlm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jh-Bj-Jtg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3966" y="768"/>
+            <point key="canvasLocation" x="4892.3664122137407" y="767.6056338028169"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wdR-1V-1Ur">
             <objects>
-                <tabBarController id="kBA-hk-2vb" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarControllerIdentifier" id="kBA-hk-2vb" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="cOr-6A-pEo"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8e6-ra-slM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -397,10 +547,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Hax-OA-aas" kind="relationship" relationship="viewControllers" id="Eso-zC-Dz7"/>
-                        <segue destination="3Kf-Cb-iKU" kind="relationship" relationship="viewControllers" id="FV0-Fd-pGi"/>
-                        <segue destination="aY8-s4-LKU" kind="relationship" relationship="viewControllers" id="Dvl-TA-ZtC"/>
-                        <segue destination="EF4-Mw-Z9q" kind="relationship" relationship="viewControllers" id="GaE-yQ-jYV"/>
+                        <segue destination="aT3-a6-25l" kind="relationship" relationship="viewControllers" id="Eso-zC-Dz7"/>
+                        <segue destination="GeB-OO-FoG" kind="relationship" relationship="viewControllers" id="FV0-Fd-pGi"/>
+                        <segue destination="uzd-ty-jC5" kind="relationship" relationship="viewControllers" id="Dvl-TA-ZtC"/>
+                        <segue destination="qgs-vC-LMm" kind="relationship" relationship="viewControllers" id="GaE-yQ-jYV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nu-kN-URf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -425,19 +575,101 @@
             </objects>
             <point key="canvasLocation" x="788.54961832061065" y="-37.323943661971832"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="yu6-5h-AdM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aT3-a6-25l" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="note" catalog="system" id="e1I-QL-roL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sZW-8E-ple">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hax-OA-aas" kind="relationship" relationship="rootViewController" id="zXC-ch-gNA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ae9-g8-qPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4875.5725190839694" y="-37.323943661971832"/>
+        </scene>
+        <!--Harmony-->
+        <scene sceneID="qfp-14-YP4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uzd-ty-jC5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Harmony" image="heart" catalog="system" id="b6V-55-MBb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ruT-Qf-VsR">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aY8-s4-LKU" kind="relationship" relationship="rootViewController" id="PIr-MG-PWQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpY-hy-YyE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3965.6488549618321" y="767.6056338028169"/>
+        </scene>
+        <!--Community-->
+        <scene sceneID="XpF-O2-LA2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GeB-OO-FoG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Community" image="command.circle" catalog="system" id="s0S-Oz-jua"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mdg-cC-NX5">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Kf-Cb-iKU" kind="relationship" relationship="rootViewController" id="ZPu-Re-6wZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1f-7a-Bc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5802" y="768"/>
+        </scene>
+        <!--Support-->
+        <scene sceneID="AhY-gH-QW3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qgs-vC-LMm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Support" image="person" catalog="system" id="fy3-iV-pwu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BYD-cT-OjF">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EF4-Mw-Z9q" kind="relationship" relationship="rootViewController" id="FY8-hW-c5N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UL4-hP-t9n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4875.5725190839694" y="-715.49295774647896"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowshape.forward" catalog="system" width="128" height="104"/>
+        <image name="bad" width="201" height="202"/>
         <image name="chart.pie.fill" catalog="system" width="128" height="123"/>
         <image name="command.circle" catalog="system" width="128" height="123"/>
+        <image name="excellent" width="202" height="201"/>
+        <image name="good" width="201" height="200"/>
         <image name="happy faces" width="400" height="300"/>
         <image name="harmony-logo" width="2000" height="1789"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="journal" width="24" height="24"/>
         <image name="landscape" width="1102" height="768"/>
         <image name="lightbulb.fill" catalog="system" width="92" height="128"/>
         <image name="note" catalog="system" width="128" height="107"/>
+        <image name="okay" width="203" height="201"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
+        <image name="terrible" width="200" height="202"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
