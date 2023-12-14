@@ -11,10 +11,24 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    let db = DataStorageManager.shared
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func getGuestUserCredentials(_ sender: Any) {
+        let guestUser = db.retrieveUsers().first(where: { $0.userId == 100 })
+
+            if let guestUser = guestUser {
+                email.text = guestUser.email
+                password.text = guestUser.password
+            } else {
+                // Handle the case when the guest user with userId 100 is not found
+                print("Guest user not found.")
+            }
     }
     
     @IBAction func loginButon(_ sender: Any) {
