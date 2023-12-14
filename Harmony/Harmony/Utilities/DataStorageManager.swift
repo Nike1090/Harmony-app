@@ -102,6 +102,17 @@ class DataStorageManager {
             
             try db?.run(guestUser)
             
+            let moods = Table("moods")
+            let moodRow = moods.insert(or: .ignore, [
+                Expression<Int>("mood_Id") <- 200,
+                Expression<Int>("user_Id") <- 300,
+                Expression<String>("feeling_text") <- "nice",
+                Expression<String>("mood_type") <- "terrible",
+                Expression<Date>("date") <- Date()
+
+            ])
+            
+            try db?.run(moodRow)
             
             
         } catch {
@@ -131,8 +142,7 @@ class DataStorageManager {
     
     
     
-    func saveMoodForCurrentUser(mood: Mood) {
-
+    func saveMoodForCurrentUser(mood: Mood, completion: @escaping (Bool) -> Void) {
         do {
             let moodTable = Table("mood")
             let moodIdExp = Expression<Int>("mood_Id")
@@ -150,11 +160,14 @@ class DataStorageManager {
             )
 
             try db?.run(insertMood)
+            completion(true) // Indicate successful insertion
         } catch {
             // Handle the error here
             print("Error inserting mood data: \(error)")
+            completion(false) // Indicate failure
         }
     }
+
     
     
 
