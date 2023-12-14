@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     var currentUser: User?
@@ -50,7 +51,17 @@ class HomeViewController: UIViewController {
                 if let moodTrackerVC = segue.destination as? MoodTrackerViewController {
                     moodTrackerVC.currentUser = currentUser
                 }
+                
             }
+        
+        if segue.identifier == "EduResourceViewController" {
+            if let vc = segue.destination as? EduResourceViewController {
+                vc.currentUser = currentUser
+            }
+            
+        }
+        
+        
     
     
         
