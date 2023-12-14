@@ -9,14 +9,11 @@ import UIKit
 
 public struct Resources {
     let title: String
-    let image: UIImage
+    let videoURL: URL?
 }
 
 public let resources: [Resources] = [
-    Resources(title: "This is Video 1", image: #imageLiteral(resourceName: "harmony-logo")),
-    Resources(title: "This is Video 2", image: #imageLiteral(resourceName: "harmony-logo")),
-    Resources(title: "This is Video 3", image: #imageLiteral(resourceName: "harmony-logo")),
-    Resources(title: "This is Video 4", image: #imageLiteral(resourceName: "harmony-logo")),
-    Resources(title: "This is Video 5", image: #imageLiteral(resourceName: "harmony-logo"))
-
+    Resources(title: "This is Video 1", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4")), // Replace with actual direct video file URL
+    Resources(title: "This is Video 2", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"))  // Replace with actual direct video file URL
 ]
+
