@@ -59,29 +59,42 @@ class MoodTrackerViewController: UIViewController {
     
 
     @IBAction func saveFeelingButton(_ sender: Any) {
-            guard let selectedMood = selectedMoodImageName, !selectedMood.isEmpty else {
-                Helper.showAlert(from: self, with: "Please tell us how you feel today?")
-                return
-            }
-
-            let currentDate = Date()
-            let db = DataStorageManager.shared
-            let allMoodsByUser = DataStorageManager.shared.retrieveMoods(for: currentUser!.userId)
-            
-            var randomNumber: Int
-            repeat {
-                randomNumber = Int.random(in: 1...100000)
-            } while allMoodsByUser.contains(where: { $0.moodId == randomNumber })
-            
-            
-        
-            let newMood = Mood(moodId: randomNumber, userId: currentUser?.userId ?? 0, feelingText: FeelingTextField.text ?? "", moodType: Mood.MoodType(rawValue: selectedMood) ?? .excellent, date: currentDate)
-
-
-            db.saveMoodForCurrentUser(mood: newMood)
-            Helper.showAlert(from: self, with: "Mood saved successfully!")
-         
+        guard let selectedMood = selectedMoodImageName, !selectedMood.isEmpty else {
+            Helper.showAlert(from: self, with: "Please tell us how you feel today?")
+            return
         }
+
+        let currentDate = Date()
+        let db = DataStorageManager.shared
+        guard let currentUser = currentUser else {
+            // Handle the case where currentUser is nil
+            return
+        }
+
+        let allMoodsByUser = db.retrieveMoods(for: currentUser.userId)
+
+        var randomNumber: Int
+        repeat {
+            randomNumber = Int.random(in: 1...100000)
+        } while allMoodsByUser.contains(where: { $0.moodId == randomNumber })
+
+        let newMood = Mood(
+            moodId: randomNumber,
+            userId: currentUser.userId,
+            feelingText: FeelingTextField.text ?? "",
+            moodType: Mood.MoodType(rawValue: selectedMood) ?? .excellent,
+            date: currentDate
+        )
+
+        db.saveMoodForCurrentUser(mood: newMood) { success in
+            if success {
+                Helper.showAlert(from: self, with: "Mood saved successfully!")
+            } else {
+                Helper.showAlert(from: self, with: "Failed to save mood.")
+            }
+        }
+    }
+
     
     
 }
