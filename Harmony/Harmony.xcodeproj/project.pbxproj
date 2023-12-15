@@ -10,6 +10,8 @@
 		474ACCD92B28490600EB95B1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474ACCD82B28490500EB95B1 /* Helper.swift */; };
 		474ACCDB2B2859CC00EB95B1 /* HarmonyDataModel.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */; };
 		474ACCDD2B296F7400EB95B1 /* MoodTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474ACCDC2B296F7400EB95B1 /* MoodTrackerViewController.swift */; };
+		4775A2122B2BCB1400A57023 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 4775A2112B2BCB1400A57023 /* GRDB */; };
+		4775A2142B2BCB5800A57023 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4775A2132B2BCB5800A57023 /* DatabaseManager.swift */; };
 		4781EA942B170CA9005BA0A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781EA932B170CA9005BA0A4 /* AppDelegate.swift */; };
 		4781EA962B170CA9005BA0A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781EA952B170CA9005BA0A4 /* SceneDelegate.swift */; };
 		4781EA9B2B170CA9005BA0A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4781EA992B170CA9005BA0A4 /* Main.storyboard */; };
@@ -33,6 +35,7 @@
 		474ACCD82B28490500EB95B1 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = HarmonyDataModel.sqlite; sourceTree = "<group>"; };
 		474ACCDC2B296F7400EB95B1 /* MoodTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerViewController.swift; sourceTree = "<group>"; };
+		4775A2132B2BCB5800A57023 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		4781EA902B170CA9005BA0A4 /* Harmony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harmony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4781EA932B170CA9005BA0A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4781EA952B170CA9005BA0A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47F34E912B1AAADC00D7B2E6 /* SQLite in Frameworks */,
+				4775A2122B2BCB1400A57023 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +118,7 @@
 				474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */,
 				47F34E962B1ACD2400D7B2E6 /* NetworkingManager.swift */,
 				47F34E982B1ACD4500D7B2E6 /* DataStorageManager.swift */,
+				4775A2132B2BCB5800A57023 /* DatabaseManager.swift */,
 				474ACCD82B28490500EB95B1 /* Helper.swift */,
 			);
 			path = Utilities;
@@ -150,6 +155,7 @@
 			name = Harmony;
 			packageProductDependencies = (
 				47F34E902B1AAADC00D7B2E6 /* SQLite */,
+				4775A2112B2BCB1400A57023 /* GRDB */,
 			);
 			productName = Harmony;
 			productReference = 4781EA902B170CA9005BA0A4 /* Harmony.app */;
@@ -181,6 +187,7 @@
 			mainGroup = 4781EA872B170CA9005BA0A4;
 			packageReferences = (
 				47F34E8F2B1AAADC00D7B2E6 /* XCRemoteSwiftPackageReference "SQLite" */,
+				4775A2102B2BCB1400A57023 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = 4781EA912B170CA9005BA0A4 /* Products */;
 			projectDirPath = "";
@@ -210,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4775A2142B2BCB5800A57023 /* DatabaseManager.swift in Sources */,
 				EB14DBEB2B2A01C2005BE7CC /* ResourceCollectionViewCell.swift in Sources */,
 				47F34EBC2B1B0EF600D7B2E6 /* LoginViewController.swift in Sources */,
 				47F34E942B1AB14500D7B2E6 /* User.swift in Sources */,
@@ -442,6 +450,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4775A2102B2BCB1400A57023 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		47F34E8F2B1AAADC00D7B2E6 /* XCRemoteSwiftPackageReference "SQLite" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
@@ -453,6 +469,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4775A2112B2BCB1400A57023 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775A2102B2BCB1400A57023 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
 		47F34E902B1AAADC00D7B2E6 /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 47F34E8F2B1AAADC00D7B2E6 /* XCRemoteSwiftPackageReference "SQLite" */;

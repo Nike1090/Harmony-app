@@ -16,9 +16,9 @@ class DataStorageManager {
     
     private init() {
         do {
-            // Get the path of the SQLite database file in the app's bundle
-            if let dbPath = Bundle.main.path(forResource: "HarmonyDataModel", ofType: "sqlite") {
-                // Create a database connection
+            
+            let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+            let dbPath = URL(fileURLWithPath: path).appendingPathComponent("dataModel.sqlite").path                // Create a database connection
                 db = try Connection(dbPath)
                 
                 // Create tables
@@ -26,9 +26,7 @@ class DataStorageManager {
                 // Insert data
                 insertInitialData()
                 
-            } else {
-                print("HarmonyDataModel.sqlite file not found in the app's bundle.")
-            }
+            
         } catch {
             print("Error creating database connection: \(error)")
         }
@@ -51,15 +49,7 @@ class DataStorageManager {
                 table.column(password)
             })
             
-            // Create User table
-            let task = Table("task")
-            let taskdi = Expression<Int>("taskid")
-            
-            
-            try db?.run(task.create(ifNotExists: true) { table in
-                table.column(taskdi, primaryKey: true)
-                
-            })
+           
             
             
             // Create Mood table
@@ -144,7 +134,7 @@ class DataStorageManager {
     
     func saveMoodForCurrentUser(mood: Mood, completion: @escaping (Bool) -> Void) {
         do {
-            let moodTable = Table("mood")
+            let moodTable = Table("moods")
             let moodIdExp = Expression<Int>("mood_Id")
             let userIdExp = Expression<Int>("user_Id")
             let feelingTextExp = Expression<String>("feeling_text")
