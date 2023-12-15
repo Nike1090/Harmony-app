@@ -31,6 +31,9 @@
 		EB14DBE92B29FA91005BE7CC /* EduResourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14DBE82B29FA91005BE7CC /* EduResourceViewController.swift */; };
 		EB14DBEB2B2A01C2005BE7CC /* ResourceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14DBEA2B2A01C2005BE7CC /* ResourceCollectionViewCell.swift */; };
 		EB14DBED2B2A07CA005BE7CC /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14DBEC2B2A07CA005BE7CC /* Resources.swift */; };
+		EB5A73352B2CC0C500E57A01 /* SupportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5A73342B2CC0C500E57A01 /* SupportTableViewController.swift */; };
+		EB5A73392B2CC2E400E57A01 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5A73382B2CC2E400E57A01 /* Doctor.swift */; };
+		EB5A733B2B2CC5AA00E57A01 /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5A733A2B2CC5AA00E57A01 /* DoctorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		EB14DBE82B29FA91005BE7CC /* EduResourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduResourceViewController.swift; sourceTree = "<group>"; };
 		EB14DBEA2B2A01C2005BE7CC /* ResourceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB14DBEC2B2A07CA005BE7CC /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		EB5A73342B2CC0C500E57A01 /* SupportTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportTableViewController.swift; sourceTree = "<group>"; };
+		EB5A73382B2CC2E400E57A01 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		EB5A733A2B2CC5AA00E57A01 /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 				47F34E9B2B1ACE3300D7B2E6 /* Mood.swift */,
 				47F34EC92B27DC3800D7B2E6 /* Quote.swift */,
 				EB14DBEC2B2A07CA005BE7CC /* Resources.swift */,
+				EB5A73382B2CC2E400E57A01 /* Doctor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,6 +146,8 @@
 				EB14DBEA2B2A01C2005BE7CC /* ResourceCollectionViewCell.swift */,
 				47FF8F132B2C132800DAEB20 /* JournalTableViewController.swift */,
 				47A251C52B2C4EC400FAD052 /* CommunityViewController.swift */,
+				EB5A73342B2CC0C500E57A01 /* SupportTableViewController.swift */,
+				EB5A733A2B2CC5AA00E57A01 /* DoctorTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,15 +232,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5A73352B2CC0C500E57A01 /* SupportTableViewController.swift in Sources */,
 				4775A2142B2BCB5800A57023 /* DatabaseManager.swift in Sources */,
 				EB14DBEB2B2A01C2005BE7CC /* ResourceCollectionViewCell.swift in Sources */,
 				47A251C62B2C4EC400FAD052 /* CommunityViewController.swift in Sources */,
 				47F34EBC2B1B0EF600D7B2E6 /* LoginViewController.swift in Sources */,
 				47F34E942B1AB14500D7B2E6 /* User.swift in Sources */,
+				EB5A73392B2CC2E400E57A01 /* Doctor.swift in Sources */,
 				EB14DBED2B2A07CA005BE7CC /* Resources.swift in Sources */,
 				47F34E992B1ACD4500D7B2E6 /* DataStorageManager.swift in Sources */,
 				47F34EBA2B1B0ED800D7B2E6 /* SignUpViewController.swift in Sources */,
 				47FF8F142B2C132800DAEB20 /* JournalTableViewController.swift in Sources */,
+				EB5A733B2B2CC5AA00E57A01 /* DoctorTableViewCell.swift in Sources */,
 				474ACCDD2B296F7400EB95B1 /* MoodTrackerViewController.swift in Sources */,
 				47F34EC82B27D89200D7B2E6 /* HomeViewController.swift in Sources */,
 				47F34E9C2B1ACE3400D7B2E6 /* Mood.swift in Sources */,
