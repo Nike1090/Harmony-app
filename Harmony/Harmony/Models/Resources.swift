@@ -13,7 +13,24 @@ public struct Resources {
 }
 
 public let resources: [Resources] = [
-    Resources(title: "This is Video 1", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4")), // Replace with actual direct video file URL
-    Resources(title: "This is Video 2", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"))  // Replace with actual direct video file URL
+    Resources(title: "Seek help for Depression", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")),
+    
+    Resources(title: "Seek help for Anxiety", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4")),
+    
+    Resources(title: "Seek help for Sleeping", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4")),
+    
+    Resources(title: "Seek help for Overthinking", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")),
+    
+    Resources(title: "Seek help for Depression", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")),
+    
+    Resources(title: "Seek help for Anxiety", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4")),
+    
+    Resources(title: "Seek help for Sleeping", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4")),
+    
+    Resources(title: "Seek help for Overthinking", videoURL: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"))
+   
+    
+    
+    
 ]
 
