@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Harmony
 //
-//  Created by Karicharla sricharan on 11/29/23.
+//  Created by Nikhil kumar on 11/29/23.
 //
 
 import UIKit
@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
        // DataStorageManager.shared.debugMoodsTable()
        // DataStorageManager.shared.debugUserTable()
-        DataStorageManager.shared.debugMoodsTableExistence()
+      //  DataStorageManager.shared.debugMoodsTableExistence()
 
         return true
     }
