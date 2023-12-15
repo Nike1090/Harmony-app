@@ -47,7 +47,9 @@ extension EduResourceViewController: UICollectionViewDataSource{
 
 extension EduResourceViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 350)
+        let width = (view.bounds.width / 2) - 10
+        let height: CGFloat = 350
+        return CGSize(width: width, height: height)
     }
 }
 

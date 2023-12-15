@@ -18,6 +18,9 @@ class ResourceCollectionViewCell: UICollectionViewCell {
     private lazy var playPauseButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Play", for: .normal)
+        button.backgroundColor = UIColor.systemGray // Added background color
+        button.setTitleColor(UIColor.white, for: .normal) // Text color
+        button.layer.cornerRadius = 25 // Rounded corners
         button.addTarget(self, action: #selector(togglePlayPause), for: .touchUpInside)
         return button
     }()
@@ -31,7 +34,7 @@ class ResourceCollectionViewCell: UICollectionViewCell {
         guard playerLayer == nil else { return }
         playerLayer = AVPlayerLayer(player: player)
         playerLayer?.frame = contentView.bounds
-        playerLayer?.videoGravity = .resizeAspect
+        playerLayer?.videoGravity = .resizeAspectFill // Change to resizeAspectFill
         if let playerLayer = playerLayer {
             contentView.layer.insertSublayer(playerLayer, at: 0)
         }
@@ -54,7 +57,15 @@ class ResourceCollectionViewCell: UICollectionViewCell {
 
     private func setupPlayPauseButton() {
         contentView.addSubview(playPauseButton)
-        playPauseButton.frame = CGRect(x: 10, y: contentView.bounds.height - 60, width: 80, height: 50)
+        let buttonSize: CGFloat = 50 // Size of the button
+        playPauseButton.frame = CGRect(
+            x: (contentView.bounds.width - buttonSize) / 2,
+            y: (contentView.bounds.height - buttonSize) / 2,
+            width: buttonSize,
+            height: buttonSize
+        )
+        playPauseButton.layer.cornerRadius = buttonSize / 2 // Optional, for a rounded button
+        playPauseButton.clipsToBounds = true
         bringSubviewToFront(playPauseButton)
     }
 
@@ -71,8 +82,25 @@ class ResourceCollectionViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        playerLayer?.frame = contentView.bounds
-        playPauseButton.frame = CGRect(x: 10, y: contentView.bounds.height - 60, width: 80, height: 50)
+        
+        // Define the height for the video and title label
+        let videoHeight = contentView.bounds.height - 50 // 50 points for title label height
+        let labelHeight: CGFloat = 50
+
+        // Set the frame for the playerLayer
+        playerLayer?.frame = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: videoHeight)
+
+        // Set the frame for the title label
+        title_label.frame = CGRect(x: 30, y: videoHeight, width: contentView.bounds.width - 60, height: labelHeight)
+
+        // Update the Play/Pause button position
+        let buttonSize: CGFloat = 50
+        playPauseButton.frame = CGRect(
+            x: (contentView.bounds.width - buttonSize) / 2,
+            y: (videoHeight - buttonSize) / 2,
+            width: buttonSize,
+            height: buttonSize
+        )
     }
 
     override func prepareForReuse() {
