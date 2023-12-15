@@ -17,12 +17,24 @@ class MoodTrackerViewController: UIViewController {
     @IBOutlet weak var badImage: UIImageView!
     @IBOutlet weak var terribleImage: UIImageView!
     
+    @IBOutlet weak var DateTextField: UITextField!
     var currentUser: User?
     var selectedMoodImageName: String?
+    var selectedDate: Date = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+         let datePicker = UIDatePicker()
+         datePicker.datePickerMode = .date
+         datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
+         datePicker.frame.size = CGSize(width: 0, height: 600)
+         datePicker.preferredDatePickerStyle = .wheels
+         
+         DateTextField.inputView = datePicker
+         DateTextField.text = formatDate(date: datePicker.date)
+         datePicker.maximumDate = Date()
         // Set tap gesture recognizers for each mood image view
                excellentImage.tag = 0
                goodImage.tag = 1
@@ -46,6 +58,19 @@ class MoodTrackerViewController: UIViewController {
                 }
     }
     
+    @objc func dateChange(datePicker: UIDatePicker) {
+           DateTextField.text = formatDate(date: datePicker.date)
+           selectedDate = datePicker.date // Update the selected date
+       }
+
+       func formatDate(date: Date) -> String {
+           let formatter = DateFormatter()
+           formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+           formatter.timeZone = TimeZone(identifier: "UTC") // Set the appropriate timezone
+           return formatter.string(from: date)
+       }
+
+    
     @objc func selectMood(_ sender: UITapGestureRecognizer) {
             guard let imageView = sender.view as? UIImageView else { return }
             
@@ -53,48 +78,47 @@ class MoodTrackerViewController: UIViewController {
             let selectedImage = moodImages[imageView.tag]
             selectedMoodImageName = selectedImage
             
+            // Check if the selected mood name is stored properly
+            print("Selected Mood: \(selectedMoodImageName ?? "No mood selected")")
+            
             // Update the SelectedFeelingImageView with the selected mood image
             SelectedFeelingImageView.image = imageView.image
         }
-    
 
     @IBAction func saveFeelingButton(_ sender: Any) {
-        guard let selectedMood = selectedMoodImageName, !selectedMood.isEmpty else {
-            Helper.showAlert(from: self, with: "Please tell us how you feel today?")
-            return
-        }
-
-        let currentDate = Date()
-        let db = DataStorageManager.shared
-        guard let currentUser = currentUser else {
-            // Handle the case where currentUser is nil
-            return
-        }
-
-        let allMoodsByUser = db.retrieveMoods(for: currentUser.userId)
-
+            guard let selectedMood = selectedMoodImageName, !selectedMood.isEmpty else {
+                Helper.showAlert(from: self, with: "Please tell us how you feel today?")
+                return
+            }
+            
+            let db = DataStorageManager.shared
+            let allMoodsByUser = db.retrieveMoods(for: currentUser?.userId ?? 0)
+            guard let currentUser = currentUser else {
+                // Handle the case where currentUser is nil
+                return
+            }
+        
         var randomNumber: Int
-        repeat {
-            randomNumber = Int.random(in: 1...100000)
-        } while allMoodsByUser.contains(where: { $0.moodId == randomNumber })
 
-        let newMood = Mood(
-            moodId: randomNumber,
-            userId: currentUser.userId,
-            feelingText: FeelingTextField.text ?? "",
-            moodType: Mood.MoodType(rawValue: selectedMood) ?? .excellent,
-            date: currentDate
-        )
+           repeat {
 
-        db.saveMoodForCurrentUser(mood: newMood) { success in
-            if success {
-                Helper.showAlert(from: self, with: "Mood saved successfully!")
-            } else {
-                Helper.showAlert(from: self, with: "Failed to save mood.")
+             randomNumber = Int.random(in: 1...1000)
+
+           } while allMoodsByUser.contains(where: { $0.moodId == randomNumber })
+        
+        
+            let newMood = Mood(
+                moodId: randomNumber,
+                userId: currentUser.userId,
+                feelingText: FeelingTextField.text ?? "",
+                moodType: Mood.MoodType(rawValue: selectedMood) ?? .excellent,
+                date: selectedDate
+            )
+             DatabaseManager.shared.saveRecord(item: newMood)
+        Helper.showAlert(from: self, with: "Your mood saved successfully")
+                   
             }
         }
-    }
+    
+    
 
-    
-    
-}
