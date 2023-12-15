@@ -52,8 +52,8 @@ class SignUpViewController: UIViewController {
             
             let newUser = User(userId: userNumber, name: userName, email: userEmail, password: userPassword)
             // Insert a new user into the database
-            DatabaseManager.shared.saveRecord(item: newUser)
-         //   try db.insertUser(userId: userNumber, name: userName, email: userEmail, password: userPassword)
+//            DatabaseManager.shared.saveRecord(item: newUser)
+            try db.insertUser(userId: userNumber, name: userName, email: userEmail, password: userPassword)
             
             Helper.showAlert(from: self,  with: "signed up successfully. Please move in to Login section")
             

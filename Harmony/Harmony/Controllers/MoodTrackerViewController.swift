@@ -74,7 +74,7 @@ class MoodTrackerViewController: UIViewController {
     @objc func selectMood(_ sender: UITapGestureRecognizer) {
             guard let imageView = sender.view as? UIImageView else { return }
             
-            let moodImages = ["excellent", "good", "okay", "bad", "terrible"]
+            let moodImages = ["terrible", "bad", "okay", "good", "excellent"]
             let selectedImage = moodImages[imageView.tag]
             selectedMoodImageName = selectedImage
             
@@ -114,7 +114,16 @@ class MoodTrackerViewController: UIViewController {
                 moodType: Mood.MoodType(rawValue: selectedMood) ?? .excellent,
                 date: selectedDate
             )
-             DatabaseManager.shared.saveRecord(item: newMood)
+             
+        
+        //DatabaseManager.shared.saveRecord(item: newMood)
+        db.saveMoodForCurrentUser(mood: newMood) { success in
+                       if success {
+                           Helper.showAlert(from: self, with: "Mood saved successfully!")
+                       } else {
+                           Helper.showAlert(from: self, with: "Failed to save mood.")
+                       }
+                   }
         Helper.showAlert(from: self, with: "Your mood saved successfully")
                    
             }
