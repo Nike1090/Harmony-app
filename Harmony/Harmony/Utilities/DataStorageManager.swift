@@ -202,19 +202,16 @@ class DataStorageManager {
     }
  
     func retrieveMoods(for userId: Int) -> [Mood] {
+        let moodTable = Table("moods")
+        let moodId = Expression<Int>("mood_Id")
+        let userIdRef = Expression<Int>("user_Id")
+        let feelingText = Expression<String>("feeling_text")
+        let moodType = Expression<String?>("mood_type")
+        let date = Expression<Date>("date")
+
         do {
-            let mood = Table("mood")
-            let moodId = Expression<Int>("mood_Id")
-            let userIdRef = Expression<Int>("user_Id")
-            let feelingText = Expression<String>("feelingText")
-            let moodType = Expression<String?>("moodType")
-            let date = Expression<Date>("date")
-
-            let query = mood.select(moodId, userIdRef, feelingText, moodType, date)
-                            .filter(userIdRef == userId)
-
-            guard let moodRows = try db?.prepare(query) else {
-                // Handle the case when moodRows is nil
+            guard let moodRows = try db?.prepare(moodTable.select(moodId, userIdRef, feelingText, moodType, date)
+                                                        .filter(userIdRef == userId)) else {
                 print("No mood rows found.")
                 return []
             }
@@ -237,41 +234,40 @@ class DataStorageManager {
 
             return result
         } catch {
-            // Handle the error here
             print("Error retrieving moods: \(error)")
             return []
         }
     }
 
     
-    func debugMoodsTable() {
-        do {
-            let moodsTable = Table("moods")
-            
-            // Check if the mood table exists
-            let tableExists = try db?.scalar(moodsTable.exists)
-            if let exists = tableExists, exists {
-                print("The 'moods' table exists.")
-                
-                // Retrieve rows from the mood table
-                let query = moodsTable.select(*)
-                guard let moodRows = try db?.prepare(query) else {
-                    print("No moods rows found.")
-                    return
-                }
-                
-                print("Rows in the 'moods' table:")
-                for row in moodRows {
-                    print("Mood ID: \(row[Expression<Int>("mood_Id")]), User ID: \(row[Expression<Int>("user_Id")]), Feeling Text: \(row[Expression<String>("feeling_text")]), Mood Type: \(row[Expression<String>("mood_type")]), Date: \(row[Expression<Date>("date")])")
-                }
-            } else {
-                print("The 'moods' table does not exist.")
-            }
-        } catch {
-            // Handle the error here
-            print("Error debugging 'mood' table: \(error)")
-        }
-    }
+//    func debugMoodsTable() {
+//        do {
+//            let moodsTable = Table("moods")
+//
+//            // Check if the mood table exists
+//            let tableExists = try db?.scalar(moodsTable.exists)
+//            if let exists = tableExists, exists {
+//                print("The 'moods' table exists.")
+//
+//                // Retrieve rows from the mood table
+//                let query = moodsTable.select(*)
+//                guard let moodRows = try db?.prepare(query) else {
+//                    print("No moods rows found.")
+//                    return
+//                }
+//
+//                print("Rows in the 'moods' table:")
+//                for row in moodRows {
+//                    print("Mood ID: \(row[Expression<Int>("mood_Id")]), User ID: \(row[Expression<Int>("user_Id")]), Feeling Text: \(row[Expression<String>("feeling_text")]), Mood Type: \(row[Expression<String>("mood_type")]), Date: \(row[Expression<Date>("date")])")
+//                }
+//            } else {
+//                print("The 'moods' table does not exist.")
+//            }
+//        } catch {
+//            // Handle the error here
+//            print("Error debugging 'mood' table: \(error)")
+//        }
+//    }
     
 //    func debugMoodsTableExistence() {
 //        do {
@@ -289,44 +285,44 @@ class DataStorageManager {
 //        }
 //    }
     
-    func debugMoodsTableExistence() {
-        do {
-            // Check if the "moods" table exists in the database
-            let query = "SELECT name FROM sqlite_master WHERE type='table' AND name='moods';"
-            let result = try db?.scalar(query)
-
-            if let tableName = result as? String, tableName == "moods" {
-                print("The 'moods' table exists.")
-
-                // Fetch and print rows of the 'moods' table
-                let moodTable = Table("moods")
-                let moodId = Expression<Int>("mood_Id")
-                let userId = Expression<Int>("user_Id")
-                let feelingText = Expression<String>("feeling_text")
-                let moodType = Expression<String>("mood_type")
-                let date = Expression<Date>("date")
-
-                do {
-                    let query = moodTable.select(moodId, userId, feelingText, moodType, date)
-                    if let rows = try db?.prepare(query) {
-                        for row in rows {
-                            print("Mood ID: \(row[moodId]), User ID: \(row[userId]), Feeling Text: \(row[feelingText]), Mood Type: \(row[moodType]), Date: \(row[date])")
-                        }
-                    } else {
-                        print("No rows found in the 'moods' table.")
-                    }
-                } catch {
-                    print("Error fetching rows from 'moods' table: \(error)")
-                }
-            } else {
-                print("The 'moods' table does not exist.")
-            }
-        } catch {
-            print("Error checking 'moods' table existence: \(error)")
-        }
-    }
-
-
+//    func debugMoodsTableExistence() {
+//        do {
+//            // Check if the "moods" table exists in the database
+//            let query = "SELECT name FROM sqlite_master WHERE type='table' AND name='moods';"
+//            let result = try db?.scalar(query)
+//
+//            if let tableName = result as? String, tableName == "moods" {
+//                print("The 'moods' table exists.")
+//
+//                // Fetch and print rows of the 'moods' table
+//                let moodTable = Table("moods")
+//                let moodId = Expression<Int>("mood_Id")
+//                let userId = Expression<Int>("user_Id")
+//                let feelingText = Expression<String>("feeling_text")
+//                let moodType = Expression<String>("mood_type")
+//                let date = Expression<Date>("date")
+//
+//                do {
+//                    let query = moodTable.select(moodId, userId, feelingText, moodType, date)
+//                    if let rows = try db?.prepare(query) {
+//                        for row in rows {
+//                            print("Mood ID: \(row[moodId]), User ID: \(row[userId]), Feeling Text: \(row[feelingText]), Mood Type: \(row[moodType]), Date: \(row[date])")
+//                        }
+//                    } else {
+//                        print("No rows found in the 'moods' table.")
+//                    }
+//                } catch {
+//                    print("Error fetching rows from 'moods' table: \(error)")
+//                }
+//            } else {
+//                print("The 'moods' table does not exist.")
+//            }
+//        } catch {
+//            print("Error checking 'moods' table existence: \(error)")
+//        }
+//    }
+//
+//
 
 
     
