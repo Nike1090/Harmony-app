@@ -18,7 +18,7 @@ class DataStorageManager {
         do {
             
             let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-            let dbPath = URL(fileURLWithPath: path).appendingPathComponent("dataModel.sqlite").path                // Create a database connection
+            let dbPath = URL(fileURLWithPath: path).appendingPathComponent("FinalDb.sqlite").path                // Create a database connection
                 db = try Connection(dbPath)
                 
                 // Create tables
