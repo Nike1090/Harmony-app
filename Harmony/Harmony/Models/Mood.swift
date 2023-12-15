@@ -8,9 +8,6 @@
 import Foundation
 import GRDB
 
-import Foundation
-import GRDB
-
 struct Mood: Codable, FetchableRecord, MutablePersistableRecord {
     enum MoodType: String, Codable {
         case excellent = "Excellent"

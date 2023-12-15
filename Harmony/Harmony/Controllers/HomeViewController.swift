@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     var currentUser: User?
     @IBOutlet weak var GreetLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -21,7 +22,12 @@ class HomeViewController: UIViewController {
         fetchQuotes()
         
         self.GreetLabel.text = "Hello, \(String(describing: currentUser!.name))"
-       
+        print(currentUser?.name ?? "hi")
+        
+        Helper.dateFormatter.dateStyle = .medium
+        Helper.dateFormatter.timeStyle = .short
+        Helper.dateFormatter.dateFormat = "MMM dd, yyyy"
+        self.dateLabel.text = Helper.dateFormatter.string(from: Date())
         // Do any additional setup after loading the view.
     }
     
@@ -61,10 +67,13 @@ class HomeViewController: UIViewController {
             
         }
         
-        
-    
-    
-        
+        if segue.identifier == "JournalTableViewController" {
+            if let JournalVC = segue.destination as? JournalTableViewController {
+                JournalVC.currentUser = currentUser
+            }
+            
+        }
+
         
         }
     
