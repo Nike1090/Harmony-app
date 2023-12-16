@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Harmony
 //
-//  Created by Karicharla sricharan on 11/29/23.
+//  Created by Nikhil kumar on 11/29/23.
 //
 
 import UIKit
