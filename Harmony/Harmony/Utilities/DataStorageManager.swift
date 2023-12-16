@@ -70,6 +70,24 @@ class DataStorageManager {
             })
             
             
+            // Create Form table
+            let form = Table("form")
+            let textField1 = Expression<String>("textField1")
+            let textField2 = Expression<String>("textField2")
+            let textField3 = Expression<String>("textField3")
+            let textField4 = Expression<String>("textField4")
+            let textField5 = Expression<String>("textField5")
+            let textField6 = Expression<String>("textField6")
+
+            try db?.run(form.create(ifNotExists: true) { table in
+                table.column(textField1)
+                table.column(textField2)
+                table.column(textField3)
+                table.column(textField4)
+                table.column(textField5)
+                table.column(textField6)
+            })
+            
             
         } catch {
             // Handle the error here
@@ -158,12 +176,27 @@ class DataStorageManager {
         }
     }
 
-    
-    
+    func insertForm(textField1: String, textField2: String, textField3: String, textField4: String, textField5: String, textField6: String) throws {
+        let form = Table("form")
+        let textField1Exp = Expression<String>("textField1")
+        let textField2Exp = Expression<String>("textField2")
+        let textField3Exp = Expression<String>("textField3")
+        let textField4Exp = Expression<String>("textField4")
+        let textField5Exp = Expression<String>("textField5")
+        let textField6Exp = Expression<String>("textField6")
 
-    
-    func updateUserMoods(for user: User) {}
-    
+        let insertForm = form.insert(
+            textField1Exp <- textField1,
+            textField2Exp <- textField2,
+            textField3Exp <- textField3,
+            textField4Exp <- textField4,
+            textField5Exp <- textField5,
+            textField6Exp <- textField6
+        )
+
+        try db?.run(insertForm)
+    }
+
     
     func retrieveUsers() -> [User] {
         do {
@@ -235,6 +268,47 @@ class DataStorageManager {
             return result
         } catch {
             print("Error retrieving moods: \(error)")
+            return []
+        }
+    }
+
+    
+    func retrieveForms() -> [Form] {
+        do {
+            let form = Table("form")
+            let textField1 = Expression<String>("textField1")
+            let textField2 = Expression<String>("textField2")
+            let textField3 = Expression<String>("textField3")
+            let textField4 = Expression<String>("textField4")
+            let textField5 = Expression<String>("textField5")
+            let textField6 = Expression<String>("textField6")
+
+            let query = form.select(textField1, textField2, textField3, textField4, textField5, textField6)
+
+            guard let formRows = try db?.prepare(query) else {
+                // Handle the case when formRows is nil
+                print("No form rows found.")
+                return []
+            }
+
+            var result: [Form] = []
+
+            for row in formRows {
+                let form = Form(
+                    textField1: row[textField1],
+                    textField2: row[textField2],
+                    textField3: row[textField3],
+                    textField4: row[textField4],
+                    textField5: row[textField5],
+                    textField6: row[textField6]
+                )
+                result.append(form)
+            }
+
+            return result
+        } catch {
+            // Handle the error here
+            print("Error retrieving forms: \(error)")
             return []
         }
     }

@@ -8,16 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		474ACCD92B28490600EB95B1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474ACCD82B28490500EB95B1 /* Helper.swift */; };
-		474ACCDB2B2859CC00EB95B1 /* HarmonyDataModel.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */; };
 		474ACCDD2B296F7400EB95B1 /* MoodTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474ACCDC2B296F7400EB95B1 /* MoodTrackerViewController.swift */; };
 		4775A2122B2BCB1400A57023 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 4775A2112B2BCB1400A57023 /* GRDB */; };
-		4775A2142B2BCB5800A57023 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4775A2132B2BCB5800A57023 /* DatabaseManager.swift */; };
 		4781EA942B170CA9005BA0A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781EA932B170CA9005BA0A4 /* AppDelegate.swift */; };
 		4781EA962B170CA9005BA0A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781EA952B170CA9005BA0A4 /* SceneDelegate.swift */; };
 		4781EA9B2B170CA9005BA0A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4781EA992B170CA9005BA0A4 /* Main.storyboard */; };
 		4781EA9D2B170CAA005BA0A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4781EA9C2B170CAA005BA0A4 /* Assets.xcassets */; };
 		4781EAA02B170CAA005BA0A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4781EA9E2B170CAA005BA0A4 /* LaunchScreen.storyboard */; };
 		47A251C62B2C4EC400FAD052 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A251C52B2C4EC400FAD052 /* CommunityViewController.swift */; };
+		47A60D332B2D2C6000BB3D3F /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A60D322B2D2C6000BB3D3F /* FormViewController.swift */; };
+		47A60D352B2D2EB300BB3D3F /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A60D342B2D2EB300BB3D3F /* Form.swift */; };
+		47A60D372B2D344000BB3D3F /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A60D362B2D344000BB3D3F /* FormTableViewController.swift */; };
 		47F34E912B1AAADC00D7B2E6 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 47F34E902B1AAADC00D7B2E6 /* SQLite */; };
 		47F34E942B1AB14500D7B2E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34E932B1AB14500D7B2E6 /* User.swift */; };
 		47F34E972B1ACD2400D7B2E6 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F34E962B1ACD2400D7B2E6 /* NetworkingManager.swift */; };
@@ -38,9 +39,7 @@
 
 /* Begin PBXFileReference section */
 		474ACCD82B28490500EB95B1 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = HarmonyDataModel.sqlite; sourceTree = "<group>"; };
 		474ACCDC2B296F7400EB95B1 /* MoodTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerViewController.swift; sourceTree = "<group>"; };
-		4775A2132B2BCB5800A57023 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		4781EA902B170CA9005BA0A4 /* Harmony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harmony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4781EA932B170CA9005BA0A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4781EA952B170CA9005BA0A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +48,9 @@
 		4781EA9F2B170CAA005BA0A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4781EAA12B170CAA005BA0A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47A251C52B2C4EC400FAD052 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		47A60D322B2D2C6000BB3D3F /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		47A60D342B2D2EB300BB3D3F /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		47A60D362B2D344000BB3D3F /* FormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
 		47F34E932B1AB14500D7B2E6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		47F34E962B1ACD2400D7B2E6 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		47F34E982B1ACD4500D7B2E6 /* DataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageManager.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				47F34EC92B27DC3800D7B2E6 /* Quote.swift */,
 				EB14DBEC2B2A07CA005BE7CC /* Resources.swift */,
 				EB5A73382B2CC2E400E57A01 /* Doctor.swift */,
+				47A60D342B2D2EB300BB3D3F /* Form.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,10 +129,8 @@
 		47F34E952B1AB36800D7B2E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				474ACCDA2B2859CC00EB95B1 /* HarmonyDataModel.sqlite */,
 				47F34E962B1ACD2400D7B2E6 /* NetworkingManager.swift */,
 				47F34E982B1ACD4500D7B2E6 /* DataStorageManager.swift */,
-				4775A2132B2BCB5800A57023 /* DatabaseManager.swift */,
 				474ACCD82B28490500EB95B1 /* Helper.swift */,
 			);
 			path = Utilities;
@@ -148,6 +149,8 @@
 				47A251C52B2C4EC400FAD052 /* CommunityViewController.swift */,
 				EB5A73342B2CC0C500E57A01 /* SupportTableViewController.swift */,
 				EB5A733A2B2CC5AA00E57A01 /* DoctorTableViewCell.swift */,
+				47A60D322B2D2C6000BB3D3F /* FormViewController.swift */,
+				47A60D362B2D344000BB3D3F /* FormTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,7 +224,6 @@
 				4781EAA02B170CAA005BA0A4 /* LaunchScreen.storyboard in Resources */,
 				4781EA9D2B170CAA005BA0A4 /* Assets.xcassets in Resources */,
 				4781EA9B2B170CA9005BA0A4 /* Main.storyboard in Resources */,
-				474ACCDB2B2859CC00EB95B1 /* HarmonyDataModel.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +235,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5A73352B2CC0C500E57A01 /* SupportTableViewController.swift in Sources */,
-				4775A2142B2BCB5800A57023 /* DatabaseManager.swift in Sources */,
 				EB14DBEB2B2A01C2005BE7CC /* ResourceCollectionViewCell.swift in Sources */,
 				47A251C62B2C4EC400FAD052 /* CommunityViewController.swift in Sources */,
 				47F34EBC2B1B0EF600D7B2E6 /* LoginViewController.swift in Sources */,
@@ -242,6 +243,8 @@
 				EB14DBED2B2A07CA005BE7CC /* Resources.swift in Sources */,
 				47F34E992B1ACD4500D7B2E6 /* DataStorageManager.swift in Sources */,
 				47F34EBA2B1B0ED800D7B2E6 /* SignUpViewController.swift in Sources */,
+				47A60D332B2D2C6000BB3D3F /* FormViewController.swift in Sources */,
+				47A60D372B2D344000BB3D3F /* FormTableViewController.swift in Sources */,
 				47FF8F142B2C132800DAEB20 /* JournalTableViewController.swift in Sources */,
 				EB5A733B2B2CC5AA00E57A01 /* DoctorTableViewCell.swift in Sources */,
 				474ACCDD2B296F7400EB95B1 /* MoodTrackerViewController.swift in Sources */,
@@ -253,6 +256,7 @@
 				4781EA962B170CA9005BA0A4 /* SceneDelegate.swift in Sources */,
 				47F34ECA2B27DC3800D7B2E6 /* Quote.swift in Sources */,
 				474ACCD92B28490600EB95B1 /* Helper.swift in Sources */,
+				47A60D352B2D2EB300BB3D3F /* Form.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
