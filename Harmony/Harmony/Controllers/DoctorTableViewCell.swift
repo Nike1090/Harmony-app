@@ -18,34 +18,40 @@ class DoctorTableViewCell: UITableViewCell {
     @IBOutlet weak var callButton: UIButton!
     
     
+    
     var phoneNumber: String?
         
         override func awakeFromNib() {
             super.awakeFromNib()
-            doctorImageView.layer.cornerRadius = doctorImageView.frame.height / 2
-            doctorImageView.clipsToBounds = true
+            doctorImageView.layer.cornerRadius = doctorImageView.frame.height
+            callButton.backgroundColor = UIColor.systemMint
+            //doctorImageView.clipsToBounds = true
         }
 
-        @IBAction func callButtonTapped(_ sender: UIButton) {
-            if let number = phoneNumber, let url = URL(string: "tel://\(number)") {
-                        if UIApplication.shared.canOpenURL(url) {
-                            // Construct the alert for calling
-                            let alert = UIAlertController(title: "Make a Call", message: "Do you want to call \(number)?", preferredStyle: .alert)
-                            let callAction = UIAlertAction(title: "Call", style: .default) { _ in
-                                UIApplication.shared.open(url)
-                            }
-                            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-                            alert.addAction(callAction)
-                            alert.addAction(cancelAction)
-
-                            // Present the alert using Helper's method
-                            Helper.showAlertforCall(alert)
-                        } else {
-                            let alert = UIAlertController(title: "Cannot make a Call", message: "Device is not compatible to make calls", preferredStyle: .alert)
-                            Helper.showAlertforCall(alert)
-                        }
-                    }
+    @IBAction func callButtonTapped(_ sender: UIButton) {
+        if let number = phoneNumber, let url = URL(string: "tel://\(number)") {
+            if UIApplication.shared.canOpenURL(url) {
+                // Construct the alert for calling
+                let alert = UIAlertController(title: "Make a Call", message: "Do you want to call \(number)?", preferredStyle: .alert)
+                let callAction = UIAlertAction(title: "Call", style: .default) { _ in
+                    UIApplication.shared.open(url)
                 }
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                alert.addAction(callAction)
+                alert.addAction(cancelAction)
+
+                // Present the alert using Helper's method
+                Helper.showAlertforCall(alert)
+            } else {
+                let alert = UIAlertController(title: "Cannot make a Call", message: "Device is not compatible to make calls", preferredStyle: .alert)
+                let okayAction = UIAlertAction(title: "Okay", style: .default) // 'Okay' button to dismiss the alert
+                alert.addAction(okayAction)
+
+                Helper.showAlertforCall(alert)
+            }
+        }
+    }
+
     
     func configure(with doctor: Doctor) {
         nameLabel.text = doctor.name
