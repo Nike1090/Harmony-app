@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import GRDB
 
-struct User: Codable, FetchableRecord, MutablePersistableRecord {
+
+struct User{
     var userId: Int
     var name: String
     var email: String
