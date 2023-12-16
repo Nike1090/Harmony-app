@@ -18,9 +18,11 @@ class DataStorageManager {
         do {
             
             let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-            let dbPath = URL(fileURLWithPath: path).appendingPathComponent("FinalDb.sqlite").path                // Create a database connection
+            let dbPath = URL(fileURLWithPath: path).appendingPathComponent("FinalDb.sqlite").path
+            print(dbPath)
+            // Create a database connection
                 db = try Connection(dbPath)
-                
+                // dropTable()
                 // Create tables
                 try createTables()
                 // Insert data
@@ -433,7 +435,7 @@ class DataStorageManager {
     
 //    func dropTable() {
 //            do {
-//                let Table = Table("")
+//                let Table = Table("moods")
 //                try db?.run(Table.drop(ifExists: true))
 //                print("table dropped successfully.")
 //            } catch {

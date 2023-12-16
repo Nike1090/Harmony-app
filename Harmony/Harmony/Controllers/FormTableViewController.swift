@@ -2,7 +2,7 @@
 //  FormTableViewController.swift
 //  Harmony
 //
-//  Created by Karicharla sricharan on 12/15/23.
+//  Created by Nikhil kumar on 12/15/23.
 //
 
 import UIKit
@@ -29,7 +29,7 @@ class FormTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
            // Set the height of each table view cell
-           return 60 // Adjust the value according to your preference
+           return 100 // Adjust the value according to your preference
        }
 
     
@@ -41,13 +41,13 @@ class FormTableViewController: UITableViewController {
         let textFieldLabel = UILabel()
         textFieldLabel.translatesAutoresizingMaskIntoConstraints = false
         textFieldLabel.font = UIFont.systemFont(ofSize: 16)
-        textFieldLabel.text = "\(form.textField1), \(form.textField2), \(form.textField3)"
+        textFieldLabel.text = "\(form.textField1), \(form.textField2),  \(form.textField3)"
         cell.contentView.addSubview(textFieldLabel)
 
         let textFieldDetailLabel = UILabel()
         textFieldDetailLabel.translatesAutoresizingMaskIntoConstraints = false
         textFieldDetailLabel.font = UIFont.boldSystemFont(ofSize: 14)
-        textFieldDetailLabel.text = "\(form.textField4), \(form.textField5), \(form.textField6)"
+        textFieldDetailLabel.text = "\(form.textField4),  \(form.textField5),  \(form.textField6)"
         cell.contentView.addSubview(textFieldDetailLabel)
 
         NSLayoutConstraint.activate([

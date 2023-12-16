@@ -2,7 +2,7 @@
 //  SignUpViewController.swift
 //  Harmony
 //
-//  Created by Karicharla sricharan on 12/2/23.
+//  Created by Nikhil kumar on 12/2/23.
 //
 import Foundation
 import UIKit

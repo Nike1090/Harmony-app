@@ -2,7 +2,7 @@
 //  JournalTableViewController.swift
 //  Harmony
 //
-//  Created by Karicharla sricharan on 12/14/23.
+//  Created by Nikhil kumar  on 12/14/23.
 //
 
 import UIKit
@@ -23,8 +23,7 @@ class JournalTableViewController: UITableViewController {
         if let user = currentUser {
             userMoods = db.retrieveMoods(for: user.userId)
         }
-        print(currentUser?.name ?? "hi")
-        print(userMoods.count)
+        
         tableView.reloadData() // Reload the table view to reflect the changes
     }
 

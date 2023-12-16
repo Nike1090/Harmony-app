@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         fetchQuotes()
         
         self.GreetLabel.text = "Hello, \(String(describing: currentUser!.name))"
-        print(currentUser?.name ?? "hi")
+        
         
         Helper.dateFormatter.dateStyle = .medium
         Helper.dateFormatter.timeStyle = .short
